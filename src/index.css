@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f8faf9;
+  color: #111814;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================================
+   PREMIUM SCROLLBAR
+================================ */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #123d2b #eef3ef;
+}
+
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef3ef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #123d2b;
+  border-radius: 999px;
+  border: 2px solid #eef3ef;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d6848;
+}
+
+/* ================================
+   TEXT SELECTION
+================================ */
+
+::selection {
+  background: #123d2b;
+  color: white;
+}
+
+/* ================================
+   CURSOR
+================================ */
+
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role="button"] {
+    cursor: none;
+  }
+}
+
+/* Keep normal cursor on mobile/tablet */
+@media (max-width: 1023px) {
+  body {
+    cursor: auto;
+  }
+}
