@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "91XXXXXXXXXX";
+  const phoneNumber = "919932400343";
 
   const message = encodeURIComponent(
     "Hello Bidyabharati Public Charitable Trust, I would like to know more about your initiatives."

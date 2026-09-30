@@ -53,9 +53,7 @@ html {
 ================================ */
 
 @media (min-width: 1024px) {
-  body {
-    cursor: none;
-  }
+  
 
   a,
   button,
@@ -63,7 +61,7 @@ html {
   textarea,
   select,
   [role="button"] {
-    cursor: none;
+    
   }
 }
 
