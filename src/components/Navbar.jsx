@@ -14,20 +14,20 @@ const Navbar = () => {
 
       setScrolled(currentScrollY > 20);
 
-      // Always show navbar at the very top
+      // Always show navbar at the top
       if (currentScrollY <= 10) {
         setNavVisible(true);
         setLastScrollY(currentScrollY);
         return;
       }
 
-      // Hide when scrolling down
+      // Hide navbar when scrolling down
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
         setNavVisible(false);
         setMenuOpen(false);
       }
 
-      // Show when scrolling up
+      // Show navbar when scrolling up
       if (currentScrollY < lastScrollY) {
         setNavVisible(true);
       }
@@ -73,12 +73,14 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Show Navbar Button */}
+      {/* =========================================
+          SHOW NAVBAR BUTTON
+      ========================================== */}
       <button
         type="button"
         onClick={() => setNavVisible(true)}
         aria-label="Show navigation"
-        className={`fixed right-4 top-4 z-[60] flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-900 shadow-md backdrop-blur-xl transition-all duration-500 lg:right-7 lg:top-5 ${
+        className={`fixed right-4 top-4 z-[60] flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-[#151515] shadow-md backdrop-blur-xl transition-all duration-500 lg:right-7 lg:top-5 ${
           navVisible
             ? "pointer-events-none scale-75 opacity-0"
             : "pointer-events-auto scale-100 opacity-100"
@@ -87,7 +89,9 @@ const Navbar = () => {
         <Icon icon="mdi:menu" className="text-lg" />
       </button>
 
-      {/* Navbar */}
+      {/* =========================================
+          NAVBAR
+      ========================================== */}
       <header
         className={`fixed left-0 top-0 z-50 w-full border-b transition-all duration-500 ${
           navVisible
@@ -99,50 +103,73 @@ const Navbar = () => {
             : "border-gray-200 bg-white"
         }`}
       >
-        <div className="mx-auto flex h-[72px] max-w-[1500px] items-center justify-between px-5 sm:px-8 lg:px-10">
-          {/* Logo */}
+        {/* Top color line inspired by logo */}
+        <div className="absolute left-0 top-0 h-[3px] w-full bg-gradient-to-r from-[#009B55] via-[#EF4938] to-[#009B55]" />
+
+        <div className="mx-auto flex h-[78px] max-w-[1500px] items-center justify-between px-5 pt-[3px] sm:px-8 lg:px-10">
+          {/* =========================================
+              LOGO + NGO NAME
+          ========================================== */}
           <a
             href="#home"
             onClick={closeMenu}
             aria-label="Bidyabharati Public Charitable Trust"
-            className="group flex shrink-0 items-center"
+            className="group flex min-w-0 shrink-0 items-center gap-3"
           >
-            <img
-              src={logo}
-              alt="Bidyabharati Public Charitable Trust"
-              className="h-12 w-auto max-w-[190px] object-contain transition duration-300 group-hover:scale-[1.02] sm:h-14 sm:max-w-[220px]"
-            />
+            {/* Logo */}
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden sm:h-14 sm:w-14">
+              <img
+                src={logo}
+                alt="Bidyabharati Public Charitable Trust Logo"
+                className="h-full w-full object-contain transition duration-300 group-hover:scale-[1.04]"
+              />
+            </div>
+
+            {/* NGO Name */}
+            <div className="flex min-w-0 flex-col justify-center leading-none">
+              <span className="font-serif text-[15px] font-bold tracking-[-0.02em] text-[#009B55] sm:text-[17px] lg:text-[18px]">
+                Bidyabharati
+              </span>
+
+              <span className="mt-1 font-serif text-[10px] font-semibold uppercase tracking-[0.12em] text-[#151515] sm:text-[11px] lg:text-[12px]">
+                Public Charitable Trust
+              </span>
+            </div>
           </a>
 
-          {/* Desktop Navigation */}
+          {/* =========================================
+              DESKTOP NAVIGATION
+          ========================================== */}
           <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
             {navLinks.map((link, index) => (
               <a
                 key={link.label}
                 href={link.href}
-                className={`relative font-serif text-[15px] font-semibold transition duration-300 xl:text-[16px] ${
+                className={`group relative font-serif text-[15px] font-semibold transition duration-300 xl:text-[16px] ${
                   index === 0
-                    ? "text-green-700"
-                    : "text-gray-600 hover:text-green-700"
+                    ? "text-[#009B55]"
+                    : "text-[#151515] hover:text-[#009B55]"
                 }`}
               >
                 {link.label}
 
-                {/* Hover underline */}
+                {/* Animated underline */}
                 <span
-                  className={`absolute -bottom-1 left-0 h-[1.5px] bg-green-700 transition-all duration-300 ${
+                  className={`absolute -bottom-1 left-0 h-[2px] rounded-full transition-all duration-300 ${
                     index === 0
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
+                      ? "w-full bg-[#EF4938]"
+                      : "w-0 bg-[#EF4938] group-hover:w-full"
                   }`}
                 />
               </a>
             ))}
 
-            {/* Donate */}
+            {/* =========================================
+                DONATE BUTTON
+            ========================================== */}
             <a
               href="#payment"
-              className="group ml-1 flex items-center gap-1.5 rounded-full bg-green-700 px-5 py-2.5 font-serif text-sm font-bold text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-md"
+              className="group ml-1 flex items-center gap-1.5 rounded-full bg-[#EF4938] px-5 py-2.5 font-serif text-sm font-bold text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-[#d93e30] hover:shadow-md"
             >
               <Icon
                 icon="mdi:heart-outline"
@@ -158,13 +185,15 @@ const Navbar = () => {
             </a>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* =========================================
+              MOBILE MENU BUTTON
+          ========================================== */}
           <button
             type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-gray-50 text-gray-900 transition duration-300 hover:border-green-700 hover:bg-green-50 hover:text-green-700 lg:hidden"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-gray-50 text-[#151515] transition duration-300 hover:border-[#009B55] hover:bg-[#effaf4] hover:text-[#009B55] lg:hidden"
           >
             <Icon
               icon={menuOpen ? "mdi:close" : "mdi:menu"}
@@ -173,7 +202,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* =========================================
+            MOBILE NAVIGATION
+        ========================================== */}
         <div
           className={`overflow-hidden border-t border-gray-100 bg-white transition-all duration-500 lg:hidden ${
             menuOpen
@@ -187,17 +218,21 @@ const Navbar = () => {
                 key={link.label}
                 href={link.href}
                 onClick={closeMenu}
-                className={`flex items-center justify-between border-b border-gray-100 py-3.5 font-serif text-base font-semibold transition ${
+                className={`group flex items-center justify-between border-b border-gray-100 py-3.5 font-serif text-base font-semibold transition ${
                   index === 0
-                    ? "text-green-700"
-                    : "text-gray-700 hover:text-green-700"
+                    ? "text-[#009B55]"
+                    : "text-[#151515] hover:text-[#009B55]"
                 }`}
               >
                 <span>{link.label}</span>
 
                 <Icon
                   icon="mdi:arrow-top-right"
-                  className="text-base text-gray-300"
+                  className={`text-base transition duration-300 ${
+                    index === 0
+                      ? "text-[#EF4938]"
+                      : "text-gray-300 group-hover:text-[#EF4938]"
+                  }`}
                 />
               </a>
             ))}
@@ -206,7 +241,7 @@ const Navbar = () => {
             <a
               href="#payment"
               onClick={closeMenu}
-              className="my-3 flex items-center justify-center gap-2 rounded-full bg-green-700 px-5 py-3 font-serif text-sm font-bold text-white transition duration-300 hover:bg-green-800"
+              className="my-3 flex items-center justify-center gap-2 rounded-full bg-[#EF4938] px-5 py-3 font-serif text-sm font-bold text-white transition duration-300 hover:bg-[#d93e30]"
             >
               <Icon
                 icon="mdi:heart-outline"
