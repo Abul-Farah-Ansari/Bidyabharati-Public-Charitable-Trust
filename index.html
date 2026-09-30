@@ -1,60 +1,93 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- =========================================
+         BASIC
+    ========================================== -->
+
     <meta charset="UTF-8" />
 
-    <!-- =========================
-         FAVICON
-    ========================== -->
-    <link rel="icon" type="image/png" href="/logo.png" />
-
-    <!-- =========================
-         VIEWPORT
-    ========================== -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
 
-    <!-- =========================
-         PRIMARY SEO
-    ========================== -->
+    <meta
+      name="theme-color"
+      content="#123d2b"
+    />
+
+    <meta
+      name="color-scheme"
+      content="light"
+    />
+
+    <!-- =========================================
+         SEO TITLE
+    ========================================== -->
 
     <title>
-      Bidyabharati Public Charitable Trust | Education & Community Development
+      Bidyabharati Public Charitable Trust | Education, Health & Social Awareness
     </title>
+
+    <!-- =========================================
+         SEO DESCRIPTION
+    ========================================== -->
 
     <meta
       name="description"
-      content="Bidyabharati Public Charitable Trust works to create opportunities through education, community participation, awareness and social development."
+      content="Bidyabharati Public Charitable Trust works for community development through child education, blood donation camps, health awareness, environmental initiatives and social awareness."
     />
 
     <meta
       name="keywords"
-      content="Bidyabharati Public Charitable Trust, charitable trust, education trust, educational NGO, community development, social development, education initiatives, NGO India"
+      content="Bidyabharati Public Charitable Trust, BPCT, Bidyabharati, charitable trust, NGO, child education, blood donation, health awareness, environmental awareness, social awareness, community development, social service"
     />
 
-    <meta name="author" content="Bidyabharati Public Charitable Trust" />
+    <meta
+      name="author"
+      content="Bidyabharati Public Charitable Trust"
+    />
+
+    <meta
+      name="publisher"
+      content="Bidyabharati Public Charitable Trust"
+    />
+
+    <!-- =========================================
+         SEARCH ENGINE CRAWLING
+    ========================================== -->
 
     <meta
       name="robots"
-      content="index, follow, max-image-preview:large"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
 
-    <meta name="language" content="English" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
 
-    <!-- =========================
-         CANONICAL
-    ========================== -->
+    <!-- =========================================
+         FAVICON
+         File:
+         src/assets/favicon.png
+    ========================================== -->
 
     <link
-      rel="canonical"
-      href="https://YOUR-DOMAIN.com/"
+      rel="icon"
+      type="image/png"
+      href="/src/assets/favicon.png"
     />
 
-    <!-- =========================
+    <link
+      rel="apple-touch-icon"
+      href="/src/assets/favicon.png"
+    />
+
+    <!-- =========================================
          OPEN GRAPH / FACEBOOK
-    ========================== -->
+    ========================================== -->
 
     <meta
       property="og:type"
@@ -63,22 +96,22 @@
 
     <meta
       property="og:title"
-      content="Bidyabharati Public Charitable Trust | Education & Community Development"
+      content="Bidyabharati Public Charitable Trust"
     />
 
     <meta
       property="og:description"
-      content="Creating opportunities through education, community participation, awareness and social development."
-    />
-
-    <meta
-      property="og:url"
-      content="https://YOUR-DOMAIN.com/"
+      content="Bidyabharati Public Charitable Trust works through education, blood donation, health awareness, environmental initiatives and social awareness activities."
     />
 
     <meta
       property="og:image"
-      content="https://YOUR-DOMAIN.com/og-image.jpg"
+      content="/src/assets/favicon.png"
+    />
+
+    <meta
+      property="og:image:alt"
+      content="Bidyabharati Public Charitable Trust"
     />
 
     <meta
@@ -91,9 +124,18 @@
       content="en_IN"
     />
 
-    <!-- =========================
+    <!--
+      Add your real domain here after deployment:
+
+      <meta
+        property="og:url"
+        content="https://yourdomain.com/"
+      />
+    -->
+
+    <!-- =========================================
          TWITTER / X
-    ========================== -->
+    ========================================== -->
 
     <meta
       name="twitter:card"
@@ -102,48 +144,99 @@
 
     <meta
       name="twitter:title"
-      content="Bidyabharati Public Charitable Trust | Education & Community Development"
+      content="Bidyabharati Public Charitable Trust"
     />
 
     <meta
       name="twitter:description"
-      content="Creating opportunities through education, community participation, awareness and social development."
+      content="Community initiatives focused on education, health, blood donation, environmental awareness and social awareness."
     />
 
     <meta
       name="twitter:image"
-      content="https://YOUR-DOMAIN.com/og-image.jpg"
+      content="/src/assets/favicon.png"
     />
-
-    <!-- =========================
-         THEME
-    ========================== -->
 
     <meta
-      name="theme-color"
-      content="#123d2b"
+      name="twitter:image:alt"
+      content="Bidyabharati Public Charitable Trust"
     />
 
-    <!-- =========================
+    <!-- =========================================
+         CANONICAL
+    ========================================== -->
+
+    <!--
+      Add this after your final domain is confirmed:
+
+      <link
+        rel="canonical"
+        href="https://yourdomain.com/"
+      />
+    -->
+
+    <!-- =========================================
          STRUCTURED DATA
-         ORGANIZATION
-    ========================== -->
+    ========================================== -->
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "NGO",
         "name": "Bidyabharati Public Charitable Trust",
-        "url": "https://YOUR-DOMAIN.com/",
-        "description": "Bidyabharati Public Charitable Trust works to create opportunities through education, community participation, awareness and social development.",
-        "logo": "https://YOUR-DOMAIN.com/logo.png"
+        "alternateName": "BPCT",
+        "description": "Bidyabharati Public Charitable Trust works for community development through child education, blood donation camps, health awareness, environmental initiatives and social awareness.",
+        "email": "bidyabharatipct.017@gmail.com",
+        "telephone": "+91 99324 00343",
+        "logo": "/src/assets/favicon.png",
+        "image": "/src/assets/favicon.png",
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "knowsAbout": [
+          "Child Education",
+          "Blood Donation",
+          "Health Awareness",
+          "Environmental Awareness",
+          "Social Awareness",
+          "Community Development"
+        ]
       }
     </script>
+
+    <!-- =========================================
+         PRECONNECT
+    ========================================== -->
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <!-- =========================================
+         VITE
+    ========================================== -->
+
+    <script
+      type="module"
+      src="/src/main.jsx"
+    ></script>
   </head>
 
   <body>
-    <div id="root"></div>
+    <noscript>
+      Bidyabharati Public Charitable Trust — community initiatives
+      focused on education, health, blood donation, environmental
+      awareness and social awareness.
+    </noscript>
 
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="root"></div>
   </body>
 </html>

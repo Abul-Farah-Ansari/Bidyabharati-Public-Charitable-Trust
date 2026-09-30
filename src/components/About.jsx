@@ -159,7 +159,7 @@ const About = () => {
             <p className="mt-5 text-[15px] leading-8 text-gray-500">
               Led by{" "}
               <span className="font-semibold text-gray-800">
-                Biswajeet Das
+                Biswajit Das
               </span>
               , the Trust has been involved in initiatives covering child
               education, blood donation, health, environmental awareness and
@@ -281,7 +281,7 @@ const About = () => {
                 </p>
 
                 <h3 className="mt-1 font-serif text-2xl font-bold text-gray-950 sm:text-3xl">
-                  Biswajeet Das
+                  Biswajit Das
                 </h3>
 
                 <p className="mt-1 text-sm text-gray-400">
